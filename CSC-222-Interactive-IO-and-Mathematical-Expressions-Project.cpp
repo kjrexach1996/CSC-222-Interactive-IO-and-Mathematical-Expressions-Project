@@ -2,9 +2,32 @@
 //
 
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    double rate, principal, t;
+
+    cout << "Enter the principal in the savings account (in $0.00 format): ";
+    cin >> principal;
+    cout << "Enter the interest rate: ";
+    cin >> rate;
+    cout << "Enter the number of times interest is compounded in a year: ";
+    cin >> t;
+
+    double rate_decimal = rate / 100;
+    double amount_in_savings = principal * pow((1 + (rate_decimal / t)), t);
+    double interest = amount_in_savings - principal;
+
+    cout << setprecision(2) << fixed;
+    cout << setw(20) << left << "Interest Rate:" << right << rate << "%" << endl;
+    cout << setw(20) << left << "Times Compounded:" << right << setprecision(0) << fixed << t << endl;
+    cout << setprecision(2) << fixed;
+    cout << setw(20) << left << "Principal:" << "$" << right << principal << endl;
+    cout << setw(20) << left << "Interest:" << "$" << right << interest << endl;
+    cout << setw(20) << left << "Amount in Savings:" << "$" << right << amount_in_savings << endl;
+    return 0;
 }
 
