@@ -28,6 +28,5 @@ int main()
     cout << setw(20) << left << "Principal:" << "$ " << setw(10) << right << principal << endl;
     cout << setw(20) << left << "Interest:" << "$ " << setw(10) << right << interest << endl;
     cout << setw(20) << left << "Amount in Savings:" << "$ " << setw(10) << right << amount_in_savings << endl;
-    return 0;
 }
 
